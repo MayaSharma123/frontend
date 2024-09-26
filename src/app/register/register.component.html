@@ -1,0 +1,176 @@
+<section class="vh-100 gradient-custom">
+  <div class="container  py-4 h-100">
+    <div class="row justify-content-center align-items-center h-70">
+      <div class="col-12 col-lg-5 col-xl-6">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 20px;">
+          <div class="card-body p-2 p-md-3">
+            <h4 class="mb-2 pb-2 pb-md-0 mb-md-4">Registration Form</h4>
+            <form #eform="ngForm" (ngSubmit)="registerFormTemplate()">
+              <div class="row gy-2 gy-md-2 overflow-hidden">
+                
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                  <label for="loginId" class="form-label"
+                    >Login Id<span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="loginId"
+                    id="loginId"
+                    placeholder="Login Id"
+                    [(ngModel)]="register.loginId"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <label for="email" class="form-label"
+                    >Email <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="name@example.com"
+                    [(ngModel)]="register.email"
+                    required
+                  />
+                </div>
+
+                 </div>
+
+                <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="firstName" class="form-label"
+                    >First Name <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="First Name"
+                    [(ngModel)]="register.firstName"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="lastName" class="form-label"
+                    >Last Name <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Last Name"
+                    [(ngModel)]="register.lastName"
+                    required
+                  />
+                </div>
+              </div>
+              
+              
+
+                <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="password" class="form-label"
+                    >Password <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="password"
+                    [(ngModel)]="register.password"
+                    value=""
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="confirmPassword" class="form-label"
+                    >Confirm Password <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    [(ngModel)]="register.confirmPassword"
+                    value=""
+                    required
+                  />
+                  </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="phone" class="form-label"
+                    >Phone Number <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                    pattern="[0-9]{10}"
+                    [(ngModel)]="register.contactNumber"
+                    required
+                  /><br />
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <label for="roles" class="form-label"
+                    >Roles <span class="text-danger">*</span></label
+                  >
+                  <select
+                    name="roles"
+                    id="roles"
+                    class="form-control"
+                    [(ngModel)]="register.roles"
+                  >
+                    <option value="ROLE_USER">ROLE_USER</option>
+                    <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                  </select>
+                </div>
+               </div>
+
+             
+               <div class="row">
+               <p class="fw-bold text-center text-success">{{ message }}</p>
+               
+               <div class="col text-center">
+                
+               <button class="btn btn-lg btn-dark " type="submit">
+                Sign up
+              </button>
+               </div>
+              </div>
+               <!-- <br /> -->
+               <!-- <div class="col-md-6 mb-4">  -->
+                 
+                   
+                   
+                <!-- </div> -->
+              </div>
+            </form>
+
+           
+           <br>
+                  <p class="m-0 text-secondary text-center">
+                    Already have an account?
+                    <a
+                      routerLink="/login"
+                      class="link-primary text-decoration-none"
+                      >Sign in</a
+                    >
+                  </p>
+               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

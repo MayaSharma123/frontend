@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div class="container mt-5 mb-5">
+  <form class="col-12 col-lg-auto mb-3" role="search">
+    <input
+      type="text"
+      name="search"
+      class="form-control form-control-light text-bg-light"
+      placeholder="Search..."
+      aria-label="Search"
+      [(ngModel)]="term"
+    />
+  </form>
+
+  <div class="innercontainer">
+  <div class="d-flex justify-content-center row">
+    <div id="carouselExample" class="carousel slide col-md-8 mb-3">
+    <div class="col-md-15" *ngFor="let x of products | filter : term">
+      <div class="row p-2 bg-white border rounded">
+        <div class="col-md-2 mt-1">
+          <img
+            class="img-fluid img-responsive rounded product-image h-100"
+            src="{{ x.imageUrl }}"
+          />
+         
+        </div>
+        <div class="col-md-6 mt-1">
+          <h5>{{ x.productName }}</h5>
+          <div class="d-flex flex-row">
+            <div class="ratings mr-2">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i
+              ><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <span>5</span>
+          </div>
+          <button type="btn" class="btn btn-sm btn-danger mt-1 mb-1">
+            Limited time deal
+          </button>
+          <div class="mt-1 mb-1 spec-1 fs-6">
+            <span>{{ x.productDesc }}</span
+            ><span class="dot"></span>
+          </div>
+        </div>
+        <div
+          class="align-items-center align-content-center col-md-3 border-left mt-1"
+        >
+          <div class="d-flex flex-row align-items-center">
+            <h4 class="mr-1">₹ {{ x.price }}</h4>
+          </div>
+          <h6 class="text-success">Free shipping</h6>
+          <div class="d-flex flex-column mt-4">
+            <button
+              class="btn btn-primary btn-sm mt-2"
+              type="button"
+              (click)="placeOrder(x)"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+<br><br>
+<div class="footer">
+  <app-footer></app-footer>
+</div>
